@@ -108,7 +108,7 @@ const CheckoutFormModal = () => {
                   />
                 </div>
                 <div className="pt-6 space-x-2 flex items-center justify-end">
-                  <Button disabled={loading} variant={"outline"} onClick={() => onChange}>Cancel</Button>
+                  <Button disabled={loading} onClick={() => onChange}>Cancel</Button>
                   <Button disabled={loading} type="submit">Save</Button>
                 </div>
               </form>
