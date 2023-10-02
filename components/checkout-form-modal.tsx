@@ -26,6 +26,8 @@ const CheckoutFormModal = () => {
   const checkoutFormModal = useCheckoutForm();
   const productIds = useCheckoutForm((state) => state.productIds)
   const totalPrice = useCheckoutForm((state) => state.totalPrice)
+  const redirectUrl = window.location.origin
+  
 
   const [loading, setLoading] = useState(false)
 
@@ -68,6 +70,7 @@ const CheckoutFormModal = () => {
       const res = await axios.post(`${process.env.NEXT_PUBLIC_API_URL}/checkout`, {
         productIds,
         totalPrice,
+        redirectUrl,
         ...values
       });
       window.location = res.data.url;
